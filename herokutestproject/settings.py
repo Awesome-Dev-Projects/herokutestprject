@@ -151,3 +151,6 @@ PHONENUMBER_DEFAULT_REGION = 'IN'
 
 # Configure Django App for Heroku.
 django_on_heroku.settings(locals())
+
+
+CSRF_TRUSTED_ORIGINS = ['heroku-testproject-2.herokuapp.com']
