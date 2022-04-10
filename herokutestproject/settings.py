@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import django_on_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -146,3 +147,7 @@ LOGIN_REDIRECT_URL = 'users:home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 
 PHONENUMBER_DEFAULT_REGION = 'IN'
+
+
+# Configure Django App for Heroku.
+django_on_heroku.settings(locals())
