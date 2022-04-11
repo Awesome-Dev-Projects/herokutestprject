@@ -22,8 +22,8 @@ def home(request):
     if request.user.is_authenticated:
         if is_doctor(request.user):
             return redirect(reverse('doctor:home'))
-        # elif is_receptionist(request.user):
-        #     return redirect(reverse('receptionist:home'))
+        elif is_receptionist(request.user):
+            return redirect(reverse('receptionist:home'))
         # else:
         #     return redirect(reverse('patient:home'))
     return render(request, 'users/index.html')
