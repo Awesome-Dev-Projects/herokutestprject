@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Demographics</title>
+  </head>
+  <body>
+    <h1>Your mobile number was successfully verfied</h1>
+    <p>Please enter your other details to continue</p>
+    <form
+      action="{% url 'patient:save-patient-profile' %}"
+      method="post"
+      style="
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        margin: 0 auto;
+      "
+    >
+    {% csrf_token %}
+      <label for="input-first-name">First Name</label>
+      <input
+        type="text"
+        class="form-input"
+        name="input-first-name"
+        id="input-first-name"
+        required
+      />
+      <label for="input-middle-name">Middle Name</label>
+      <input
+        type="text"
+        class="form-input"
+        name="input-middle-name"
+        id="input-middle-name"
+        required
+      />
+      <label for="input-last-name">Last Name</label>
+      <input
+        type="text"
+        class="form-input"
+        name="input-last-name"
+        id="input-last-name"
+        required
+      />
+      <label for="input-age">Age</label>
+      <input type="text" name="input-age" id="input-age" required />
+      <label for="input-address">Address</label>
+      <textarea
+        name="input-address"
+        id="input-address"
+        cols="30"
+        rows="6"
+      ></textarea>
+      <label for="input-email">Email</label>
+      <input
+        type="email"
+        class="form-input"
+        name="input-email"
+        id="input-email"
+        required
+      />
+      <div style="display: flex;">
+        <label for="">Select Gender</label>
+          <input type="radio" id="input-gender-male"
+          name="input-gender" value="male" />
+          <label for="input-gender-male">Male</label>
+          <input type="radio" id="input-gender-female" name="input-gender" value="female" />
+          <label for="input-gender-female">Female</label>
+          <input type="radio" id="input-gender-other" name="input-gender" value="other" />
+          <label for="input-gender-other">Other</label>
+      </div>
+      <label for="input-blood-group">Blood Group</label>
+      <input type="text" class="form-input" name="input-blood-group" id="input-blood-group">
+      <input type="submit" value="Proceed to Appointment">
+    </form>
+  </body>
+</html>

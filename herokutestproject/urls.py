@@ -23,6 +23,7 @@ urlpatterns = [
     path('doctor/', include('doctor.urls', namespace='doctor')),
     path('users/', include('django.contrib.auth.urls')),
     path('users/', include('users.urls', namespace='users')),
+    path('patient/', include('patient.urls', namespace='patient')),
 ]
 
 
